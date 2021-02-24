@@ -5,15 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final String prefCountingKey = "counterValue";
     private int counting = 0;
 
     @Override
@@ -66,12 +65,12 @@ public class MainActivity extends AppCompatActivity {
     private void saveCounter() {
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("counterValue", counting);
+        editor.putInt(prefCountingKey, counting);
         editor.apply();
     }
 
     private void getCounter() {
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        counting = sharedPref.getInt("counterValue", 0);
+        counting = sharedPref.getInt(prefCountingKey, 0);
     }
 }
