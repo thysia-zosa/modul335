@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.9.13)  28 FEB 2021 21:13
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.9.13)  28 FEB 2021 21:41
  restricted system commands enabled.
  file:line:error style messages enabled.
 **techEntwurf.tex
@@ -474,27 +474,31 @@ File: ../system.jpg Graphic file (type jpg)
 <use ../system.jpg>
 Package luatex.def Info: ../system.jpg  used on input line 121.
 (luatex.def)             Requested size: 426.79134pt x 284.7265pt.
- [4<../system.jpg>]
-(./techEntwurf.aux))
+<../aufbau.jpg, id=19, 764.8575pt x 453.695pt>
+File: ../aufbau.jpg Graphic file (type jpg)
+<use ../aufbau.jpg>
+Package luatex.def Info: ../aufbau.jpg  used on input line 131.
+(luatex.def)             Requested size: 426.79134pt x 253.16057pt.
+ [4<../system.jpg>] [5<../aufbau.jpg>] (./techEntwurf.aux))
 
 Here is how much of LuaTeX's memory you used:
- 5087 strings out of 481365
+ 5098 strings out of 481365
  100000,662416 words of node,token memory allocated
  469 words of node memory still in use:
    4 hlist, 1 vlist, 1 rule, 5 glue, 3 kern, 1 glyph, 7 attribute, 53 glue_spec,
  5 attribute_list, 1 write nodes
    avail lists: 1:1,2:344,3:78,4:6,5:192,6:19,7:2509,8:1,9:88,10:4,11:321
- 22011 multiletter control sequences out of 65536+600000
+ 22016 multiletter control sequences out of 65536+600000
  44 fonts using 4668123 bytes
  45i,6n,56p,10132b,281s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
 7.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on techEntwurf.pdf (4 pages, 214080 bytes).
+Output written on techEntwurf.pdf (5 pages, 267528 bytes).
 
-PDF statistics: 39 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
+PDF statistics: 43 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
