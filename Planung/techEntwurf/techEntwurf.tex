@@ -59,7 +59,7 @@
     \item [Identifikation] showList
     \item [Vorbedingungen] Bei der Installation werden zwei Orte (Matterhorn und Bundeshaus) mitgegeben, sodass die Liste bereits beim ersten Öffnen einen Inhalt besitzt.
     \item [Vorgehen] Automatisierter Test zur Überprüfung, ob beim Anzeigen der MainActivity eine Liste mit Inhalt angezeigt wird.
-    \item [Erwartetes Resultat] Die Liste mit den \"installierten\" Orten (inklusive aller Icons: Kompass und Stift) wird angezeigt.
+    \item [Erwartetes Resultat] Die Liste mit den \dq installierten\dq  Orten (inklusive aller Icons: Kompass und Stift) wird angezeigt.
   \end{description}
 
   \item Neuen Ort (Position) auswählen
@@ -67,17 +67,19 @@
   \begin{description}
     \item [Identifikation] pickPosition
     \item [Vorbedingungen] Eine KartenApp ist auf dem Test-Phone vorhanden und brauchbar für eine Datenein- und -ausgabe zwischen Activities. Die MainActivity mit der Liste wird angezeigt. Der Testfall showList ist erfolgreich durchgeführt worden.
-    \item [Vorgehen] Manueller Test; Drücken auf den \"Ort hinzufügen\"-Button, Eingabe \"ZLI\" im Suchfeld, Drücken auf \"Position übernehmen\"-Icon.
-    \item [Erwartetes Resultat] Die EditLocationActivity wird angezeigt mit den Koordinaten \"47.3598043 N\" (Breitengrad) und \"8.5210211 O\" (Längengrad). Die Angaben dürfen eine Abweichung von +/- 0.001 aufweisen.
+    \item [Vorgehen] Manueller Test; Drücken auf den \dq Ort hinzufügen\dq -Button, Eingabe \dq ZLI\dq im Suchfeld, Drücken auf \dq Position übernehmen\dq -Icon.
+    \item [Erwartetes Resultat] Die EditLocationActivity wird angezeigt mit den Koordinaten \dq 47.3598043 N\dq  (Breitengrad) und \dq 8.5210211 O\dq  (Längengrad). Die Angaben dürfen eine Abweichung von +/- 0.001 aufweisen.
   \end{description}
+
+  \pagebreak
 
   \item Ausgewählter Ortsposition einen Namen geben
 
   \begin{description}
     \item [Identifikation] pickName
     \item [Vorbedingungen] Der Testfall pickPosition wurde ausgeführt und die EditLocationActivity wird angezeigt.
-    \item [Vorgehen] Manueller Test; Im Feld mit dem Platzhalter \"Name des Ortes\" wird \"ZLI\" eingegeben, danach wird auf das Icon \"Speichern und zurück zur MainActivity\" geklickt.
-    \item [Erwartetes Resultat] Die aktualisierte Liste mit dem neuen Eintrag \"ZLI\" wird angezeigt.
+    \item [Vorgehen] Manueller Test; Im Feld mit dem Platzhalter \dq Name des Ortes\dq  wird \dq ZLI\dq  eingegeben, danach wird auf das Icon \dq Speichern und zurück zur MainActivity\dq  geklickt.
+    \item [Erwartetes Resultat] Die aktualisierte Liste mit dem neuen Eintrag \dq ZLI\dq  wird angezeigt.
   \end{description}
 
   \item Richtung zu einem Ort anzeigen
@@ -85,8 +87,8 @@
   \begin{description}
     \item [Identifikation] showDirection
     \item [Vorbedingungen] Der Testfall showList wurde durchgeführt. In den Einstellungen des Emulators wird als Location Basel (47.5596N, 7.5886O) genommen. Die MainActivity wird angezeigt.
-    \item [Vorgehen] Manueller Test; Auf der Liste wird mit Klick auf das entsprechende Kompass-Icon \"Matterhorn\" ausgewählt.
-    \item [Erwartetes Resultat] Die ShowDirectionActivity wird angezeigt mit dem Kompass und der Richtungsanzeige auf 178°. Auf dem Emulator sollte Norden gegen \"Oben\" sein.
+    \item [Vorgehen] Manueller Test; Auf der Liste wird mit Klick auf das entsprechende Kompass-Icon \dq Matterhorn\dq  ausgewählt.
+    \item [Erwartetes Resultat] Die ShowDirectionActivity wird angezeigt mit dem Kompass und der Richtungsanzeige auf 178°. Auf dem Emulator sollte Norden gegen \dq Oben\dq  sein.
   \end{description}
 
   \item Ortsposition bearbeiten
@@ -94,8 +96,8 @@
   \begin{description}
     \item [Identifikation] editPosition
     \item [Vorbedingungen] Der Testfall showList wurde durchgeführt. Die MainActivity wird angezeigt.
-    \item [Vorgehen] Manueller Test; Auf der Liste wird mit Klick auf das entsprechende Stift-Icon \"Bundeshaus\" ausgewählt. Nun sollte die EditLocationActivity angezeigt werden. Mit Klick auf \"Ort auswählen\" wird auf die SearchOnMapActivity gewechselt. Im Suchfeld \"Freibad Marzili\" eingeben. Drücken auf \"Position übernehmen\"-Icon.
-    \item [Erwartetes Resultat] Die EditLocationActivity wird angezeigt mit den Koordinaten \"46.9424203 N\" (Breitengrad) und \"7.4437811 O\" (Längengrad). Die Angaben dürfen eine Abweichung von +/- 0.001 aufweisen.
+    \item [Vorgehen] Manueller Test; Auf der Liste wird mit Klick auf das entsprechende Stift-Icon \dq Bundeshaus\dq  ausgewählt. Nun sollte die EditLocationActivity angezeigt werden. Mit Klick auf \dq Ort auswählen\dq  wird auf die SearchOnMapActivity gewechselt. Im Suchfeld \dq Freibad Marzili\dq  eingeben. Drücken auf \dq Position übernehmen\dq -Icon.
+    \item [Erwartetes Resultat] Die EditLocationActivity wird angezeigt mit den Koordinaten \dq 46.9424203 N\dq  (Breitengrad) und \dq 7.4437811 O\dq  (Längengrad). Die Angaben dürfen eine Abweichung von +/- 0.001 aufweisen.
   \end{description}
 
   \item Ortsnamen bearbeiten
@@ -103,19 +105,21 @@
   \begin{description}
   \item [Identifikation] editName
   \item [Vorbedingungen] Der Testfall editPosition wurde durchgeführt. Die EditLocationActivity wird angezeigt.
-  \item [Vorgehen] Manueller Test; Die TextView mit dem Namen wird ausgewählt. Anstelle des bisherigen Textes wird \"Marzilibad\" eingegeben, danach wird auf das Icon \"Speichern und zurück zur MainActivity\" geklickt.
-  \item [Erwartetes Resultat] Die aktualisierte Liste mit dem geänderten Eintrag \"Marzili\" wird angezeigt.
+  \item [Vorgehen] Manueller Test; Die TextView mit dem Namen wird ausgewählt. Anstelle des bisherigen Textes wird \dq Marzilibad\dq  eingegeben, danach wird auf das Icon \dq Speichern und zurück zur MainActivity\dq  geklickt.
+  \item [Erwartetes Resultat] Die aktualisierte Liste mit dem geänderten Eintrag \dq Marzili\dq  wird angezeigt.
   \end{description}
 
 \end{enumerate}
 
-% \section{Aufbau des Systems}
-%
+\section{Aufbau des Systems}
+
 % Beschreiben Sie den Aufbau des Systems in einem Klassen- oder Paketdiagramm.
 % A. Das Klassen- oder Paketdiagramm ist verständlich und mehrheitlich nach UML.
 % B. Das Diagramm bildet die Beziehungen ab.
 % C. Das Diagramm und die Implementation passen zusammen.
-%
+
+\includegraphics[width=15.0cm]{../system.jpg}
+
 % \section{Visualisierung des Gesamtsystems}
 %
 % Das Gesamtsystem wurde als Verteilungsdiagramm (Deployment-Diagramm) oder sonst einer verständlichen Grafik visualisiert. Aus der Abbildung lassen sich mindestens folgende Informationen herauslesen:
