@@ -28,8 +28,23 @@
   \item Zielplattform ist Android 8.1.
 \end{itemize}
 
-% \section{Testkonzept}
-%
+\section{Testkonzept}
+
+\begin{description}
+  \item [Womit wird die App getestet?] Wahrscheinlich allein mit dem Emulator (Nexus 6 mit Android 8.1, API-Level 27); falls sich noch die Möglichkeit ergibt, ein Android-Phone aufzutreiben, würde gegebenenfalls auch dieses zum Einsatz kommen.
+  \item [Wie wird die App getestet?] Angedacht sind Whitebox-Unittests; falls Services zum Einsatz kommen, wären Integrationstests passend.
+\end{description}
+
+\subsection{Mögliche Testfälle}
+
+\begin{itemize}
+  \item Kalkulation der Richtung von Punkt 1 zu Punkt 2
+  \item Rückgabewert der KartenApp
+  \item Korrektheit der Kompassanzeige (nur Himmelsrichtungen)
+  \item Korrektheit der Richtungsanzeige auf dem Kompass (im Verhältnis zu den Himmelsrichtungen)
+  \item Funktionalität der Buttons zur Änderung der View/Activity
+\end{itemize}
+
 % \section{Aufbau des Systems}
 %
 % \section{Visualisierung des Gesamtsystems}
