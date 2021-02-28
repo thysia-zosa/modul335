@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.9.13)  28 FEB 2021 21:05
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.9.13)  28 FEB 2021 21:13
  restricted system commands enabled.
  file:line:error style messages enabled.
 **techEntwurf.tex
@@ -478,20 +478,20 @@ Package luatex.def Info: ../system.jpg  used on input line 121.
 (./techEntwurf.aux))
 
 Here is how much of LuaTeX's memory you used:
- 5086 strings out of 481365
+ 5087 strings out of 481365
  100000,662416 words of node,token memory allocated
  469 words of node memory still in use:
    4 hlist, 1 vlist, 1 rule, 5 glue, 3 kern, 1 glyph, 7 attribute, 53 glue_spec,
  5 attribute_list, 1 write nodes
-   avail lists: 1:1,2:341,3:78,4:7,5:192,6:19,7:2496,8:1,9:88,10:5,11:321
- 22010 multiletter control sequences out of 65536+600000
+   avail lists: 1:1,2:344,3:78,4:6,5:192,6:19,7:2509,8:1,9:88,10:4,11:321
+ 22011 multiletter control sequences out of 65536+600000
  44 fonts using 4668123 bytes
  45i,6n,56p,10132b,281s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
 7.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on techEntwurf.pdf (4 pages, 214065 bytes).
+Output written on techEntwurf.pdf (4 pages, 214080 bytes).
 
 PDF statistics: 39 PDF objects out of 1000 (max. 8388607)
  26 compressed objects within 1 object stream
