@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.9.13)  28 FEB 2021 15:30
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.9.13)  28 FEB 2021 15:31
  restricted system commands enabled.
  file:line:error style messages enabled.
 **techEntwurf.tex
@@ -477,7 +477,7 @@ Here is how much of LuaTeX's memory you used:
  469 words of node memory still in use:
    4 hlist, 1 vlist, 1 rule, 5 glue, 3 kern, 1 glyph, 7 attribute, 53 glue_spec,
  5 attribute_list, 1 write nodes
-   avail lists: 1:1,2:225,3:43,4:5,5:77,6:11,7:1005,8:1,9:50,10:4,11:105
+   avail lists: 1:1,2:227,3:46,4:5,5:80,6:12,7:1056,8:1,9:54,10:4,11:109
  22005 multiletter control sequences out of 65536+600000
  44 fonts using 4668123 bytes
  45i,6n,56p,10132b,248s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -485,7 +485,7 @@ Here is how much of LuaTeX's memory you used:
 /lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
 7.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on techEntwurf.pdf (2 pages, 152541 bytes).
+Output written on techEntwurf.pdf (2 pages, 152712 bytes).
 
 PDF statistics: 32 PDF objects out of 1000 (max. 8388607)
  22 compressed objects within 1 object stream
