@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.9.13)  28 FEB 2021 13:44
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.9.13)  28 FEB 2021 14:10
  restricted system commands enabled.
  file:line:error style messages enabled.
 **techEntwurf.tex
@@ -424,70 +424,71 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 17
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 16
 .
 
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 17
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 16
 .
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 17
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 16
 .
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 1
-7.
+6.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 1
-7.
+6.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 17.
+(Font)              <17.28> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 17.
+(Font)              <12> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 17.
+(Font)              <10> on input line 16.
 <../UseCase.jpg, id=1, 462.72874pt x 500.87125pt>
 File: ../UseCase.jpg Graphic file (type jpg)
 <use ../UseCase.jpg>
-Package luatex.def Info: ../UseCase.jpg  used on input line 23.
+Package luatex.def Info: ../UseCase.jpg  used on input line 21.
 (luatex.def)             Requested size: 284.52756pt x 307.9843pt.
  [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<../UseCase.jpg>] (./techEnt
-wurf.aux))
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<../UseCase.jpg>] [2] (./tec
+hEntwurf.aux))
 
 Here is how much of LuaTeX's memory you used:
- 5072 strings out of 481365
+ 5075 strings out of 481365
  100000,662416 words of node,token memory allocated
  469 words of node memory still in use:
    4 hlist, 1 vlist, 1 rule, 5 glue, 3 kern, 1 glyph, 7 attribute, 53 glue_spec,
  5 attribute_list, 1 write nodes
-   avail lists: 1:1,2:154,3:27,4:5,5:41,6:7,7:247,8:1,9:35,10:4,11:27
- 22003 multiletter control sequences out of 65536+600000
- 43 fonts using 4605427 bytes
+   avail lists: 1:1,2:225,3:41,4:5,5:66,6:11,7:486,8:1,9:49,10:4,11:53
+ 22005 multiletter control sequences out of 65536+600000
+ 44 fonts using 4668123 bytes
  45i,6n,56p,10132b,248s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/pub
-lic/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmr17.pfb>
-Output written on techEntwurf.pdf (1 page, 111920 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
+7.pfb>
+Output written on techEntwurf.pdf (2 pages, 123872 bytes).
 
-PDF statistics: 22 PDF objects out of 1000 (max. 8388607)
- 14 compressed objects within 1 object stream
+PDF statistics: 28 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
