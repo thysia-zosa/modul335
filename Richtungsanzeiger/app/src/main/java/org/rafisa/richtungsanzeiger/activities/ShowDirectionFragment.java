@@ -12,7 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import org.rafisa.richtungsanzeiger.R;
 import org.rafisa.richtungsanzeiger.databinding.FragmentSecondBinding;
 
-public class SecondFragment extends Fragment {
+public class ShowDirectionFragment extends Fragment {
 
     private FragmentSecondBinding binding;
 

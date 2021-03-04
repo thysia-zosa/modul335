@@ -14,7 +14,7 @@ import com.google.android.material.snackbar.Snackbar;
 import org.rafisa.richtungsanzeiger.R;
 import org.rafisa.richtungsanzeiger.databinding.FragmentFirstBinding;
 
-public class FirstFragment extends Fragment {
+public class MainFragment extends Fragment {
 
     private FragmentFirstBinding binding;
 
@@ -42,9 +42,9 @@ public class FirstFragment extends Fragment {
         binding.fab.setOnClickListener(view1 -> Snackbar.make(view1, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show());
 
-        binding.showDirectionButton.setOnClickListener(v -> NavHostFragment.findNavController(FirstFragment.this)
+        binding.showDirectionButton.setOnClickListener(v -> NavHostFragment.findNavController(MainFragment.this)
                 .navigate(R.id.action_FirstFragment_to_SecondFragment));
-        binding.editLocationButton.setOnClickListener(v -> NavHostFragment.findNavController(FirstFragment.this)
+        binding.editLocationButton.setOnClickListener(v -> NavHostFragment.findNavController(MainFragment.this)
                 .navigate(R.id.action_FirstFragment_to_ThirdFragment));
     }
 

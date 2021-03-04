@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="org.rafisa.richtungsanzeiger.activities.FirstFragment"
+        android:name="org.rafisa.richtungsanzeiger.activities.MainFragment"
         android:label="@string/main_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="org.rafisa.richtungsanzeiger.activities.SecondFragment"
+        android:name="org.rafisa.richtungsanzeiger.activities.ShowDirectionFragment"
         android:label="@string/show_direction_fragment_label"
         tools:layout="@layout/fragment_second">
 
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/ThirdFragment"
-        android:name="org.rafisa.richtungsanzeiger.activities.ThirdFragment"
+        android:name="org.rafisa.richtungsanzeiger.activities.EditLocationFragment"
         android:label="@string/edit_location_fragment_label"
         tools:layout="@layout/fragment_third">
 
