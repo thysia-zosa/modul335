@@ -1,4 +1,4 @@
-package org.rafisa.richtungsanzeiger;
+package org.rafisa.richtungsanzeiger.activities;
 
 import android.os.Bundle;
 
@@ -13,6 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import org.rafisa.richtungsanzeiger.R;
 import org.rafisa.richtungsanzeiger.databinding.ActivityMainBinding;
 
 import android.view.Menu;
