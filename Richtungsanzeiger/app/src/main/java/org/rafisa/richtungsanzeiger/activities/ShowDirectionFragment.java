@@ -41,7 +41,6 @@ public class ShowDirectionFragment extends Fragment implements SensorEventListen
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.arrowView.setRotation(directionValue);
 
 //        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -65,12 +64,16 @@ public class ShowDirectionFragment extends Fragment implements SensorEventListen
         } else if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) {
             System.arraycopy(event.values, 0, magnetometerReading, 0, magnetometerReading.length);
         }
+        updateOrientationAngles();
+        binding.basicCompassView.setRotation((float) Math.toDegrees(-orientationAngles[0]));
+        binding.arrowView.setRotation((float) (directionValue - Math.toDegrees(orientationAngles[0])));
     }
 
     public void updateOrientationAngles() {
         SensorManager.getRotationMatrix(rotationMatrix, null, accelerometerReading, magnetometerReading);
 
         SensorManager.getOrientation(rotationMatrix, orientationAngles);
+//        System.out.println(orientationAngles[0] + ", " + orientationAngles[1] + ", " + orientationAngles[2]);
     }
 
     @Override
