@@ -1,5 +1,10 @@
 package org.rafisa.richtungsanzeiger.activities;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -23,11 +28,13 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
+/**
+ * Enthält Code von https://developer.android.com/guide/topics/sensors/sensors_position
+ */
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    protected Direction direction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
