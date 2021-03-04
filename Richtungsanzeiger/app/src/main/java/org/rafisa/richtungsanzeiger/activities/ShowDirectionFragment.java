@@ -24,6 +24,7 @@ public class ShowDirectionFragment extends Fragment implements SensorEventListen
     private final float[] magnetometerReading = new float[3];
     private final float[] rotationMatrix = new float[9];
     private final float[] orientationAngles = new float[3];
+    private int lookingAngle = 0;
 
     @Override
     public View onCreateView(
@@ -65,8 +66,9 @@ public class ShowDirectionFragment extends Fragment implements SensorEventListen
             System.arraycopy(event.values, 0, magnetometerReading, 0, magnetometerReading.length);
         }
         updateOrientationAngles();
-        binding.basicCompassView.setRotation((float) Math.toDegrees(-orientationAngles[0]));
-        binding.arrowView.setRotation((float) (directionValue - Math.toDegrees(orientationAngles[0])));
+        lookingAngle = (int) Math.round(Math.toDegrees(-orientationAngles[0]));
+        binding.basicCompassView.setRotation(lookingAngle);
+        binding.arrowView.setRotation(directionValue + lookingAngle);
     }
 
     public void updateOrientationAngles() {

@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_ThirdFragment"
             app:destination="@id/ThirdFragment" />
+        <action
+            android:id="@+id/to_map_fragment"
+            app:destination="@id/mapView" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -38,6 +41,16 @@
         android:name="org.rafisa.richtungsanzeiger.activities.EditLocationFragment"
         android:label="@string/edit_location_fragment_label"
         tools:layout="@layout/fragment_third">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapView"
+        android:name="org.rafisa.richtungsanzeiger.activities.SearchOnMapFragment"
+        android:label="@string/search_on_map_fragment_label"
+        tools:layout="@layout/fragment_search_on_map">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"

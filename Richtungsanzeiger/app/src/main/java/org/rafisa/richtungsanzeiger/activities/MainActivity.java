@@ -51,8 +51,13 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         addLocation = (FloatingActionButton) findViewById(R.id.fab);
-        addLocation.setOnClickListener(view1 -> Snackbar.make(view1, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show());
+        addLocation.setOnClickListener(v -> {
+//            navController.navigateUp();
+            navController.navigate(R.id.to_map_fragment);
+        });
+//                .navigate(R.id.action_FirstFragment_to_ThirdFragment)
+//                view1 -> Snackbar.make(view1, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show());
 
     }
 
