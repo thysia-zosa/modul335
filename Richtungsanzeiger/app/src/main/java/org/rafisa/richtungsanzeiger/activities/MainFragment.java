@@ -1,17 +1,23 @@
 package org.rafisa.richtungsanzeiger.activities;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import org.rafisa.richtungsanzeiger.R;
 import org.rafisa.richtungsanzeiger.databinding.FragmentFirstBinding;
@@ -24,6 +30,7 @@ import java.util.ArrayList;
 
 public class MainFragment extends Fragment {
 
+    private static final int REQUEST_LOCATION = 1;
     private FragmentFirstBinding binding;
     ArrayList<Location> locationList;
     private RecyclerView locRecyclerView;
@@ -51,7 +58,7 @@ public class MainFragment extends Fragment {
         LocationViewListener locationViewListener = new LocationViewListener() {
             @Override
             public void showLocation(View view, int position) {
-                Location actualLocation = new Location("Hier", 8.5210211, 47.3598043);
+                Location actualLocation = tryGetLocation();
                 Location targetLocation = locationList.get(position);
                 Direction direction = new Direction(actualLocation, targetLocation);
                 int directionValue = direction.getDirectionAzimuth();
@@ -103,6 +110,52 @@ public class MainFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    /**
+     * für das Folgende: Danke an https://www.tutorialspoint.com/how-to-get-current-location-latitude-and-longitude-in-android
+     * @return
+     */
+    private Location tryGetLocation() {
+        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            getGpsEnabled();
+            return new Location("Hier", 8.5210211, 47.3598043);
+        } else {
+            return getLocation(locationManager);
+        }
+    }
+
+    private Location getLocation(LocationManager manager) {
+        if (ActivityCompat.checkSelfPermission(
+                getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+            return new Location("Hier", 8.5210211, 47.3598043);
+        } else {
+            android.location.Location locationGps = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if (locationGps != null) {
+                double latitude = locationGps.getLatitude();
+                double longitude = locationGps.getLongitude();
+                return new Location("Hier", longitude, latitude);
+            } else {
+                return new Location("Hier", 8.5210211, 47.3598043);
+            }
+        }
+
+    }
+
+    private void getGpsEnabled() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setMessage("GPS ermöglichen?")
+                .setCancelable(false)
+                .setPositiveButton("Ja", (dialog, which)
+                        -> startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)))
+                .setNegativeButton("Nein", (dialog, which) -> dialog.cancel());
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
 }
