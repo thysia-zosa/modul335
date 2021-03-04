@@ -15,14 +15,19 @@ import androidx.navigation.ui.NavigationUI;
 
 import org.rafisa.richtungsanzeiger.R;
 import org.rafisa.richtungsanzeiger.databinding.ActivityMainBinding;
+import org.rafisa.richtungsanzeiger.models.Direction;
+import org.rafisa.richtungsanzeiger.models.Location;
 
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    protected Direction direction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
