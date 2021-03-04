@@ -43,6 +43,8 @@ public class FirstFragment extends Fragment {
 
         binding.showDirectionButton.setOnClickListener(v -> NavHostFragment.findNavController(FirstFragment.this)
                 .navigate(R.id.action_FirstFragment_to_SecondFragment));
+        binding.editLocationButton.setOnClickListener(v -> NavHostFragment.findNavController(FirstFragment.this)
+                .navigate(R.id.action_FirstFragment_to_ThirdFragment));
     }
 
     @Override
