@@ -62,7 +62,11 @@ public class MainFragment extends Fragment {
             int position = getArguments().getInt("position");
             Gson gson = new Gson();
             Location savedLocation = gson.fromJson(json, new TypeToken<Location>() {}.getType());
-            locationList.set(position, savedLocation);
+            if (position == -1) {
+                locationList.add(savedLocation);
+            } else {
+                locationList.set(position, savedLocation);
+            }
             saveLocationList();
         }
 //        locationList = new ArrayList<>();
@@ -216,6 +220,7 @@ public class MainFragment extends Fragment {
         String json = new Gson().toJson(locationList);
 
         editor.putString("locationList", json);
+        editor.putInt("locationListSize", locationList.size());
         editor.apply();
 
     }

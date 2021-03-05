@@ -50,11 +50,10 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-//        addLocation = (FloatingActionButton) findViewById(R.id.fab);
-//        addLocation.setOnClickListener(v -> {
-////            navController.navigateUp();
-//            navController.navigate(R.id.to_map_fragment);
-//        });
+        addLocation = (FloatingActionButton) findViewById(R.id.fab);
+        addLocation.setOnClickListener(v -> {
+            navController.navigate(R.id.action_FirstFragment_to_ThirdFragment);
+        });
 //                .navigate(R.id.action_FirstFragment_to_ThirdFragment)
 //                view1 -> Snackbar.make(view1, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show());
