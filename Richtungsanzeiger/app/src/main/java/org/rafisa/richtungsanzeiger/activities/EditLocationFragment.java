@@ -3,6 +3,7 @@ package org.rafisa.richtungsanzeiger.activities;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 public class EditLocationFragment extends Fragment {
 
     private Location location;
+    private int position;
     private FragmentThirdBinding binding;
 
     public EditLocationFragment() {
@@ -64,6 +66,23 @@ public class EditLocationFragment extends Fragment {
             binding.latitudeText.setText(String.valueOf(location.getLatitude()));
             binding.longitudeText.setText(String.valueOf(location.getLongitude()));
         }
+        binding.editPositionButton.setOnClickListener(v -> {
+            Location location = new Location("Hier", 8.5210211, 47.3598043);
+            try {
+                location = new Location(binding.editLocationName.getText().toString(),
+                        Double.parseDouble(binding.longitudeText.getText().toString()),
+                        Double.parseDouble(binding.latitudeText.getText().toString()));
+
+            } catch (Exception e) {
+                // TODO: implementieren bei fehlerhaften Werten
+            }
+            Bundle bundle = new Bundle();
+            bundle.putString("location", location.toJson());
+            bundle.putInt("position", position);
+            NavHostFragment.findNavController(EditLocationFragment.this)
+                    .navigate(R.id.action_ThirdFragment_to_FirstFragment, bundle);
+        }
+);
 
 
         // Inflate the layout for this fragment

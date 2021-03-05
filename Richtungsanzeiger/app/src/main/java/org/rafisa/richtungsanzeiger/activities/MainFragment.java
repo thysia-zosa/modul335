@@ -57,7 +57,14 @@ public class MainFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         getLocationList();
-        ;
+        if (getArguments() != null) {
+            String json = getArguments().getString("location");
+            int position = getArguments().getInt("position");
+            Gson gson = new Gson();
+            Location savedLocation = gson.fromJson(json, new TypeToken<Location>() {}.getType());
+            locationList.set(position, savedLocation);
+            saveLocationList();
+        }
 //        locationList = new ArrayList<>();
 //        locationList.add(new Location("Matterhorn", 7.6584519, 45.9765738));
 //        locationList.add(new Location ("Bundeshaus", 7.4442559, 46.9465609));
@@ -80,6 +87,7 @@ public class MainFragment extends Fragment {
                 Location location = locationList.get(position);
                 Bundle bundle = new Bundle();
                 bundle.putString("location", location.toJson());
+                bundle.putInt("position", position);
                 NavHostFragment.findNavController(MainFragment.this)
                         .navigate(R.id.action_FirstFragment_to_ThirdFragment, bundle);
             }
@@ -121,6 +129,12 @@ public class MainFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getLocationList();
     }
 
     /**
@@ -191,10 +205,19 @@ public class MainFragment extends Fragment {
         locationList.add(new Location("Bundeshaus", 7.4442559, 46.9465609));
 
         String json = new Gson().toJson(locationList);
-        System.out.println("Grösse" + json);
 
         editor.putString("locationList", json);
         editor.apply();
+    }
+
+    private void saveLocationList() {
+        SharedPreferences sharedPrefs = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPrefs.edit();
+        String json = new Gson().toJson(locationList);
+
+        editor.putString("locationList", json);
+        editor.apply();
+
     }
 
 }

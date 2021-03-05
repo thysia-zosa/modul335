@@ -7,7 +7,7 @@
     <string name="edit_location_fragment_label">Ort bearbeiten</string>
     <string name="search_on_map_fragment_label">Ort auswählen</string>
     <string name="next">Next</string>
-    <string name="edit_position">Ort auswählen</string>
+    <string name="edit_position">Ort speichern</string>
 
     <string name="hello_first_fragment">Matterhorn</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
