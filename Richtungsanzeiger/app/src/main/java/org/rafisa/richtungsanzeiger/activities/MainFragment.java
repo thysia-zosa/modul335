@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -18,6 +19,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.rafisa.richtungsanzeiger.R;
 import org.rafisa.richtungsanzeiger.databinding.FragmentFirstBinding;
@@ -36,6 +40,7 @@ public class MainFragment extends Fragment {
     private RecyclerView locRecyclerView;
     private LocationView locationView;
 
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -51,9 +56,10 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        locationList = new ArrayList<>();
-        locationList.add(new Location("Matterhorn", 7.6584519, 45.9765738));
-        locationList.add(new Location ("Bundeshaus", 7.4442559, 46.9465609));
+        getLocationList();;
+//        locationList = new ArrayList<>();
+//        locationList.add(new Location("Matterhorn", 7.6584519, 45.9765738));
+//        locationList.add(new Location ("Bundeshaus", 7.4442559, 46.9465609));
 
         LocationViewListener locationViewListener = new LocationViewListener() {
             @Override
@@ -155,6 +161,33 @@ public class MainFragment extends Fragment {
                 .setNegativeButton("Nein", (dialog, which) -> dialog.cancel());
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    private void getLocationList() {
+    SharedPreferences sharedPrefs = getActivity().getPreferences(Context.MODE_PRIVATE);
+    boolean init = sharedPrefs.getBoolean("initialisiert", false);
+        if (!init) {
+            initSharedPrefs();
+        } //else {
+            String json = sharedPrefs.getString("locationList", "");
+        Gson gson = new Gson();
+        locationList = gson.fromJson(json, new TypeToken<ArrayList<Location>>() {}.getType());
+//        }
+    }
+
+    private void initSharedPrefs() {
+        SharedPreferences sharedPrefs = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPrefs.edit();
+        editor.putBoolean("initialisiert", true);
+        locationList = new ArrayList<>();
+        locationList.add(new Location("Matterhorn", 7.6584519, 45.9765738));
+        locationList.add(new Location ("Bundeshaus", 7.4442559, 46.9465609));
+
+        String json = new Gson().toJson(locationList);
+        System.out.println("Grösse" + json);
+
+        editor.putString("locationList", json);
+        editor.apply();
     }
 
 }

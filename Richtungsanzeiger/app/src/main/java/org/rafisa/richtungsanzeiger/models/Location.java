@@ -1,5 +1,8 @@
 package org.rafisa.richtungsanzeiger.models;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Location {
     private String name;
     private double longitude;
@@ -21,5 +24,18 @@ public class Location {
 
     public double getLatitude() {
         return latitude;
+    }
+
+    public String toJsoon() {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("name", name);
+            jsonObject.put("longitude", longitude);
+            jsonObject.put("latitude", latitude);
+            return jsonObject.toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "";
+        }
     }
 }
