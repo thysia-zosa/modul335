@@ -26,7 +26,7 @@ public class Location {
         return latitude;
     }
 
-    public String toJsoon() {
+    public String toJson() {
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("name", name);

@@ -8,7 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import org.rafisa.richtungsanzeiger.R;
+import org.rafisa.richtungsanzeiger.databinding.FragmentSecondBinding;
+import org.rafisa.richtungsanzeiger.databinding.FragmentThirdBinding;
+import org.rafisa.richtungsanzeiger.models.Location;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,14 +25,8 @@ import org.rafisa.richtungsanzeiger.R;
  */
 public class EditLocationFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private Location location;
+    private FragmentThirdBinding binding;
 
     public EditLocationFragment() {
         // Required empty public constructor
@@ -41,26 +43,30 @@ public class EditLocationFragment extends Fragment {
     // TODO: Rename and change types and number of parameters
     public static EditLocationFragment newInstance(String param1, String param2) {
         EditLocationFragment fragment = new EditLocationFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        binding = FragmentThirdBinding.inflate(inflater, container, false);
+        if (getArguments() != null) {
+            String json = getArguments().getString("location");
+            Gson gson = new Gson();
+            location = gson.fromJson(json, new TypeToken<Location>() {
+            }.getType());
+            binding.editLocationName.setText(location.getName());
+            binding.latitudeText.setText(String.valueOf(location.getLatitude()));
+            binding.longitudeText.setText(String.valueOf(location.getLongitude()));
+        }
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third, container, false);
+        return binding.getRoot();
     }
 }

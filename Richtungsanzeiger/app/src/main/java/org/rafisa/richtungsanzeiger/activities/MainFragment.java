@@ -56,7 +56,8 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        getLocationList();;
+        getLocationList();
+        ;
 //        locationList = new ArrayList<>();
 //        locationList.add(new Location("Matterhorn", 7.6584519, 45.9765738));
 //        locationList.add(new Location ("Bundeshaus", 7.4442559, 46.9465609));
@@ -76,6 +77,11 @@ public class MainFragment extends Fragment {
 
             @Override
             public void editLocation(View view, int position) {
+                Location location = locationList.get(position);
+                Bundle bundle = new Bundle();
+                bundle.putString("location", location.toJson());
+                NavHostFragment.findNavController(MainFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_ThirdFragment, bundle);
             }
         };
 
@@ -119,6 +125,7 @@ public class MainFragment extends Fragment {
 
     /**
      * für das Folgende: Danke an https://www.tutorialspoint.com/how-to-get-current-location-latitude-and-longitude-in-android
+     *
      * @return
      */
     private Location tryGetLocation() {
@@ -164,12 +171,12 @@ public class MainFragment extends Fragment {
     }
 
     private void getLocationList() {
-    SharedPreferences sharedPrefs = getActivity().getPreferences(Context.MODE_PRIVATE);
-    boolean init = sharedPrefs.getBoolean("initialisiert", false);
+        SharedPreferences sharedPrefs = getActivity().getPreferences(Context.MODE_PRIVATE);
+        boolean init = sharedPrefs.getBoolean("initialisiert", false);
         if (!init) {
             initSharedPrefs();
         } //else {
-            String json = sharedPrefs.getString("locationList", "");
+        String json = sharedPrefs.getString("locationList", "");
         Gson gson = new Gson();
         locationList = gson.fromJson(json, new TypeToken<ArrayList<Location>>() {}.getType());
 //        }
@@ -181,7 +188,7 @@ public class MainFragment extends Fragment {
         editor.putBoolean("initialisiert", true);
         locationList = new ArrayList<>();
         locationList.add(new Location("Matterhorn", 7.6584519, 45.9765738));
-        locationList.add(new Location ("Bundeshaus", 7.4442559, 46.9465609));
+        locationList.add(new Location("Bundeshaus", 7.4442559, 46.9465609));
 
         String json = new Gson().toJson(locationList);
         System.out.println("Grösse" + json);
