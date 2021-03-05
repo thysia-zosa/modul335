@@ -6,6 +6,8 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +27,8 @@ public class ShowDirectionFragment extends Fragment implements SensorEventListen
     private final float[] rotationMatrix = new float[9];
     private final float[] orientationAngles = new float[3];
     private int lookingAngle = 0;
+    private Vibrator vibrator;
+    private boolean foundDirection = false;
 
     @Override
     public View onCreateView(
@@ -33,6 +37,7 @@ public class ShowDirectionFragment extends Fragment implements SensorEventListen
     ) {
         directionValue = getArguments().getInt("directionValue");
         sensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
+        vibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
 
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -41,15 +46,6 @@ public class ShowDirectionFragment extends Fragment implements SensorEventListen
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
-//        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(SecondFragment.this)
-//                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
-//            }
-//        });
     }
 
     @Override
@@ -69,13 +65,27 @@ public class ShowDirectionFragment extends Fragment implements SensorEventListen
         lookingAngle = (int) Math.round(Math.toDegrees(-orientationAngles[0]));
         binding.basicCompassView.setRotation(lookingAngle);
         binding.arrowView.setRotation(directionValue + lookingAngle);
+        checkVibration(lookingAngle);
     }
 
     public void updateOrientationAngles() {
         SensorManager.getRotationMatrix(rotationMatrix, null, accelerometerReading, magnetometerReading);
 
         SensorManager.getOrientation(rotationMatrix, orientationAngles);
-//        System.out.println(orientationAngles[0] + ", " + orientationAngles[1] + ", " + orientationAngles[2]);
+    }
+
+    private void checkVibration(int lookingAngle) {
+        int directionAngle = Math.floorMod(directionValue + lookingAngle + 360, 360);
+        if (foundDirection) {
+            if (directionAngle > 30 || directionAngle < 330) {
+                foundDirection = false;
+            }
+        } else {
+            if (directionAngle < 1 || directionAngle > 359) {
+                foundDirection = true;
+                vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+            }
+        }
     }
 
     @Override

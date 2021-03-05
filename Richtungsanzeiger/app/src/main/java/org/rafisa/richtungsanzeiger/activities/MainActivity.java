@@ -54,9 +54,6 @@ public class MainActivity extends AppCompatActivity {
         addLocation.setOnClickListener(v -> {
             navController.navigate(R.id.action_FirstFragment_to_ThirdFragment);
         });
-//                .navigate(R.id.action_FirstFragment_to_ThirdFragment)
-//                view1 -> Snackbar.make(view1, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show());
 
     }
 
