@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.gson.Gson;
@@ -23,7 +24,7 @@ import org.rafisa.richtungsanzeiger.models.Location;
 public class EditLocationFragment extends Fragment {
 
     private Location location;
-    private int position;
+//    private int position;
     private FragmentThirdBinding binding;
 
     public EditLocationFragment() {
@@ -52,15 +53,15 @@ public class EditLocationFragment extends Fragment {
         binding = FragmentThirdBinding.inflate(inflater, container, false);
         if (getArguments() != null) {
             String json = getArguments().getString("location");
-            position = getArguments().getInt("position");
+//            position = getArguments().getInt("position");
             Gson gson = new Gson();
             location = gson.fromJson(json, new TypeToken<Location>() {
             }.getType());
             binding.editLocationName.setText(location.getName());
             binding.latitudeText.setText(String.valueOf(location.getLatitude()));
             binding.longitudeText.setText(String.valueOf(location.getLongitude()));
-        } else {
-            position = -1;
+//        } else {
+//            position = -1;
         }
         binding.editPositionButton.setOnClickListener(v -> {
             Location location = new Location("Hier", 8.5210211, 47.3598043);
@@ -72,12 +73,16 @@ public class EditLocationFragment extends Fragment {
             } catch (Exception e) {
                 // TODO: implementieren bei fehlerhaften Werten
             }
-            Bundle bundle = new Bundle();
-            bundle.putString("location", location.toJson());
-            bundle.putInt("position", position);
-            System.out.println("Index: " + position);
-            NavHostFragment.findNavController(EditLocationFragment.this)
-                    .navigate(R.id.action_ThirdFragment_to_FirstFragment, bundle);
+//            Bundle bundle = new Bundle();
+//            bundle.putString("location", location.toJson());
+//            bundle.putInt("position", position);
+//            System.out.println("Index: " + position);
+            NavController navController = NavHostFragment.findNavController(this);
+            navController.getPreviousBackStackEntry().getSavedStateHandle().set("location", location);
+//            navController.getPreviousBackStackEntry().getSavedStateHandle().set("position", position);
+//            NavHostFragment.findNavController(EditLocationFragment.this)
+//                    .navigate(R.id.action_ThirdFragment_to_FirstFragment);
+            navController.popBackStack();
         }
 );
 

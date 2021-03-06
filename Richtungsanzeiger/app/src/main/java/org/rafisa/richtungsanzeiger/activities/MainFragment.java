@@ -16,6 +16,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
+import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,6 +44,7 @@ public class MainFragment extends Fragment {
     private RecyclerView locRecyclerView;
     private LocationView locationView;
     private FloatingActionButton addLocation;
+    private int positionToEdit = -1;
 
 
     @Override
@@ -57,17 +61,19 @@ public class MainFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        NavController navController = NavHostFragment.findNavController(this);
 
         getLocationList();
         if (getArguments() != null) {
             String json = getArguments().getString("location");
-            int position = getArguments().getInt("position");
+//            int position = getArguments().getInt("position");
             Gson gson = new Gson();
             Location savedLocation = gson.fromJson(json, new TypeToken<Location>() {}.getType());
-            if (position == -1) {
+            if (positionToEdit == -1) {
                 locationList.add(savedLocation);
             } else {
-                locationList.set(position, savedLocation);
+                locationList.set(positionToEdit, savedLocation);
+                positionToEdit = -1;
             }
             saveLocationList();
         }
@@ -81,8 +87,7 @@ public class MainFragment extends Fragment {
                 int directionValue = direction.getDirectionAzimuth();
                 Bundle bundle = new Bundle();
                 bundle.putInt("directionValue", directionValue);
-                NavHostFragment.findNavController(MainFragment.this)
-                        .navigate(R.id.showDirectionAction, bundle);
+                navController.navigate(R.id.showDirectionAction, bundle);
             }
 
             @Override
@@ -90,22 +95,45 @@ public class MainFragment extends Fragment {
                 Location location = locationList.get(position);
                 Bundle bundle = new Bundle();
                 bundle.putString("location", location.toJson());
-                bundle.putInt("position", position);
-                NavHostFragment.findNavController(MainFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_ThirdFragment, bundle);
+//                bundle.putInt("position", position);
+                navController.navigate(R.id.action_FirstFragment_to_ThirdFragment, bundle);
             }
         };
 
+        showLocationList(locationViewListener);
+
+        addLocation = (FloatingActionButton) getView().findViewById(R.id.fab);
+        addLocation.setOnClickListener(v -> {
+            navController.navigate(R.id.action_FirstFragment_to_ThirdFragment);
+        });
+
+        MutableLiveData<Location> liveDataLocation = navController.getCurrentBackStackEntry().getSavedStateHandle().getLiveData("location");
+        liveDataLocation.observe(getViewLifecycleOwner(), new Observer<Location>() {
+            @Override
+            public void onChanged(Location s) {
+                String json = getArguments().getString("location");
+//            int position = getArguments().getInt("position");
+                Gson gson = new Gson();
+                Location savedLocation = gson.fromJson(json, new TypeToken<Location>() {}.getType());
+                if (positionToEdit == -1) {
+                    locationList.add(savedLocation);
+                } else {
+                    locationList.set(positionToEdit, savedLocation);
+                    positionToEdit = -1;
+                }
+                saveLocationList();
+                showLocationList(locationViewListener);
+
+            }
+        });
+
+    }
+
+    private void showLocationList(LocationViewListener locationViewListener) {
         locationView = new LocationView(locationList, locationViewListener);
         locRecyclerView = (RecyclerView) getView().findViewById(R.id.recycler_view);
         locRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         locRecyclerView.setAdapter(locationView);
-
-        addLocation = (FloatingActionButton) getView().findViewById(R.id.fab);
-        addLocation.setOnClickListener(v -> {
-            NavHostFragment.findNavController(MainFragment.this).navigate(R.id.action_FirstFragment_to_ThirdFragment);
-        });
-
     }
 
     @Override
