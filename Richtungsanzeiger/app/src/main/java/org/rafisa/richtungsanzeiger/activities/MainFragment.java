@@ -20,6 +20,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -39,6 +40,7 @@ public class MainFragment extends Fragment {
     ArrayList<Location> locationList;
     private RecyclerView locRecyclerView;
     private LocationView locationView;
+    private FloatingActionButton addLocation;
 
 
     @Override
@@ -98,6 +100,11 @@ public class MainFragment extends Fragment {
         locRecyclerView = (RecyclerView) getView().findViewById(R.id.recycler_view);
         locRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         locRecyclerView.setAdapter(locationView);
+
+        addLocation = (FloatingActionButton) getView().findViewById(R.id.fab);
+        addLocation.setOnClickListener(v -> {
+            NavHostFragment.findNavController(MainFragment.this).navigate(R.id.action_FirstFragment_to_ThirdFragment);
+        });
 
     }
 

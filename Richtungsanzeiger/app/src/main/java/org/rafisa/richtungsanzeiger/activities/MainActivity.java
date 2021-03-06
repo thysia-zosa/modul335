@@ -1,18 +1,10 @@
 package org.rafisa.richtungsanzeiger.activities;
 
-import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.View;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -21,13 +13,10 @@ import androidx.navigation.ui.NavigationUI;
 
 import org.rafisa.richtungsanzeiger.R;
 import org.rafisa.richtungsanzeiger.databinding.ActivityMainBinding;
-import org.rafisa.richtungsanzeiger.models.Direction;
-import org.rafisa.richtungsanzeiger.models.Location;
 
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
 
 /**
  * Enthält Code von https://developer.android.com/guide/topics/sensors/sensors_position
@@ -36,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    private FloatingActionButton addLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +38,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        addLocation = (FloatingActionButton) findViewById(R.id.fab);
-        addLocation.setOnClickListener(v -> {
-            navController.navigate(R.id.action_FirstFragment_to_ThirdFragment);
-        });
 
     }
 
