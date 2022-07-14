@@ -1,0 +1,346 @@
+commit f8a90571dc141f1efa117da67f268400fff84e64
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 14:14:48 2021 +0100
+
+    Reflexion hinzugefügt
+
+commit 23b918b56df1fbe095c68be594c904684eab6b3d
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 13:51:48 2021 +0100
+
+    APK nochmals ausgegeben
+
+commit 09887048880481ada6eac8a3967aa06e0067ce08
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 13:51:29 2021 +0100
+
+    Webseite hinzugefügt
+
+commit 65f5efa57c118d952176b96bacd97a3d19dff18a
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 13:51:11 2021 +0100
+
+    Icon ausgewechselt
+
+commit cf91e8cedc728fe3e2943e4d4d2bb55281a7ca1f
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 13:23:48 2021 +0100
+
+    Testprotokoll korrigiert
+    
+    Datum, Resultat
+
+commit d463762ee506c73db7450cd04346663786a1d163
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 13:16:30 2021 +0100
+
+    Testprotokoll abgenommen
+    
+    jaja
+
+commit d26929623a0f010c9ec2e494bbc0ef5b8a03af65
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 13:15:15 2021 +0100
+
+    AbgabeZip erstellt
+    
+    mit SourceCode und APK
+
+commit 96a056da16b42bc165d8270e6c6c79ce74d843ac
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 12:51:33 2021 +0100
+
+    Release-APK erstellt
+    
+    fertig?
+
+commit 4f6ef499c9ef0bf85929192125569a5406d2e331
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 12:51:09 2021 +0100
+
+    Vibration implementiert
+
+commit 17a97848a30e92bb52794a563669ae2aeafab96e
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 10:53:17 2021 +0100
+
+    Neue Orte hinzufügen möglich
+
+commit bf92e8b9337dc31923eaa08f6398958aeec18139
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 10:35:49 2021 +0100
+
+    Locations sind editierbar
+
+commit 6c74c8a327cb6ef01a5ca4205ad11f9e5f21d365
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 09:58:44 2021 +0100
+
+    Datenübergabe an EditLocationFragment funktioniert
+
+commit 76254505fff2755918bcc2e71b4170376c9a6e28
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 09:36:32 2021 +0100
+
+    SharedPreferences initialisiert Probedaten
+
+commit dd3e4099f5d38a65c04e3157d9083ac278be5287
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Mar 5 00:28:06 2021 +0100
+
+    Kartenfragment mit dem Button erreichbar
+    
+    hat noch viele Bugs
+
+commit d4b502e3551cc64a08644d5bfb6890d3062e76e8
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 23:21:05 2021 +0100
+
+    OrthinzufügenButton jetzt in der MainActivity
+    
+    da er im Fragment kein Platz mehr hatte
+
+commit 7293f7c55a1ebb2252819d36be93cb84d503ea23
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 23:09:31 2021 +0100
+
+    Standortbestimmung für die Richtungsermittlung implementiert
+    
+    Kein fixer Standort mehr
+
+commit fb9ecfbfe8c4913f8310e28f88e3afab2a09b5c6
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 22:36:47 2021 +0100
+
+    Liste wird jetzt generiert
+    
+    und der Kompass erhält die tatsächlichen Koordinaten
+
+commit adefbb2c733efee2191ae43859a115781bad609e
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 19:27:27 2021 +0100
+
+    RIchtungsberechnung korrigiert
+    
+    und LandscapeModus ausgeschaltet
+
+commit e5c04fc1d1865533d9016e561e845a1d43181ad1
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 16:27:25 2021 +0100
+
+    Kompass funktioniert
+
+commit 35c8a4dced8fa15de1ea98a4dea5f040606bbabf
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 16:08:23 2021 +0100
+
+    Sensoren für Kompass eingebaut
+
+commit ebefe4ba8acbba42d081a49afec05ae331cbca1b
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 15:44:17 2021 +0100
+
+    Pfeil dreht zur DirectionValue
+
+commit 914b30fd7e549613f29d12f0f9f010c9feca9571
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 15:05:48 2021 +0100
+
+    Richtungspfeil hinzugefügt
+
+commit b47ab6208b72c4065d13c179a7ba34e717558d28
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 14:41:06 2021 +0100
+
+    Datenübergabe zwischen Main/ ShowDirectionFragment
+
+commit ba1ac4408610811ffbda2de511a6e40e361daee4
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 13:11:57 2021 +0100
+
+    Models hinzugefügt
+    
+    Location und Direction
+
+commit 85b3339bab113e2e79a57e206d251f94efba2773
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 11:45:48 2021 +0100
+
+    Provisorisches Kompassbild hinzugefügt
+
+commit dc21393023e01d58f9415470fd256f2881c05a62
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 11:13:43 2021 +0100
+
+    EditLocationActivity hinzugefügt (thirdfragment)
+
+commit 534a9b6ee20706556b09aad4af02fb23d8bd5798
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 11:13:16 2021 +0100
+
+    Ordnerstruktur erstellt und aktualisiert
+    
+    activities und fragments in 'activities'
+
+commit 179c3f3cbf53e03b96bf913cf7abf513b5852f0e
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 09:59:30 2021 +0100
+
+    ShowDirectionButton-Click implementiert
+    
+    navigiert nun zum SecondFragment
+
+commit b921c8394f5412d1218ea6a7314df29fec08bdd3
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 09:51:38 2021 +0100
+
+    Grundlegendes Layout MainActivity hinzugefügt
+    
+    Liste und FloatingActionButton
+
+commit 1151a3bbca45c1b026aec4cdbabe8a91ee10969b
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Mar 4 08:22:00 2021 +0100
+
+    AndroidStudio-Projekt gestartet
+    
+    Typ "Basic Activity"
+
+commit 65bfecaee918ccb13e9a97373ac7799d76ac472d
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Sun Feb 28 21:42:55 2021 +0100
+
+    Gesamtaufbau hinzugefügt
+    
+    Erster Versuch eines DeploymentDiagrams
+
+commit 6c67b3b66ba08ddb8877626dd5aba3ae6b2292d7
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Sun Feb 28 21:14:55 2021 +0100
+
+    Fehlerbereinigung
+    
+    Mehrere Latex-Ungenauigkeiten ausgemerzt
+
+commit 95653a7e70a0dbee8486584b5a421fc4670e7f1e
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Sun Feb 28 21:07:07 2021 +0100
+
+    Systemaufbau hinzugefügt
+    
+    Ein erster Draft für den Systemaufbau (Package-Class-Diagram) in DrawIo und jpg.
+
+commit 3c85b38d65ed9d1b3eb1935b26f6e5c327977fd7
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Sun Feb 28 19:24:29 2021 +0100
+
+    Testkonzept korrigiert
+    
+    Gemäss den Projektkriterien gibt es jetzt zu jedem UseCase mindestens einen Testfall.
+
+commit 5da14655f2f1464f55ae98844ecb1df2d64283ff
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Sun Feb 28 19:23:44 2021 +0100
+
+    Korrektur UseCases
+    
+    sprachliche Fehler beseitigt
+
+commit 2e7f65ce692045597d64e3915966dbf8e1a61f32
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Sun Feb 28 15:31:52 2021 +0100
+
+    Nichtfunktionale Anforderungen überarbeitet
+    
+    Eine Anforderung hinzugefügt (Sprache Java)
+
+commit 14cb824b489d315b6d0116fd92264d55f3d3b5bd
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Sun Feb 28 15:31:01 2021 +0100
+
+    Testkonzept hinzugefügt
+    
+    Ein erster Überblick, wie das Testing verlaufen soll.
+
+commit f4e2e0fe439df3f49aaa6b97c472c3c54e3f1978
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Sun Feb 28 14:11:15 2021 +0100
+
+    Nichtfunktionale Anforderungen hinzugefügt
+    
+    Drei wahrscheinlich mögliche Anforderungen aufgezählt
+
+commit 89e99b776792564ba290abb1cff043514e2259ba
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Sun Feb 28 13:46:13 2021 +0100
+
+    Beginn Technischer Entwurf
+    
+    Funktionale Anforderungen hinzugefügt
+
+commit f9af8952cdf2137188d4e4f8489a5287af24834d
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Sun Feb 28 13:45:39 2021 +0100
+
+    Korrektur UseCases
+    
+    "Neuen Ort auswählen" kam zweimal vor
+
+commit 03c2f908f8bdd3c216da025a49c7d747b461ca5c
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Feb 26 16:30:43 2021 +0100
+
+    UseCases hinzugefügt
+    
+    Als DrawIo, Svg und pdf
+    zur Verwendung als Svg im technischen Entwurf
+
+commit 77b2e1ada5700e4865eee655221d519bd9351890
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Feb 26 15:02:18 2021 +0100
+
+    Mockup hinzugefügt
+    
+    Mockup als DrawIo, Svg und Pdf
+
+commit beb7aada33354909df462ec13f37625d014a5ded
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Feb 26 11:09:44 2021 +0100
+
+    Pitch hinzugefügt
+    
+    Pitch als MarkDownFile und generiertes PDF innerhalb des neuen Verzeichnisses "Planung"
+
+commit 03ba297bcf49061b43ed07f6dacb407a04b96214
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Fri Feb 26 10:39:36 2021 +0100
+
+    initialer Commit für Projektarbeit
+    
+    Enthält das Readme mit der Kurzbeschreibung
+
+commit 302a37e0a79f59c32ef1acda1e3186c12853bfce
+Author: Jonas Tochtermann <thysia.zosa@gmail.com>
+Date:   Thu Feb 25 20:35:34 2021 +0100
+
+    updated to android-studio 4.2.5beta
+    
+    gradle modules updated
+
+commit 24b5577e262ff5e9ab5b35913353fade9cbe9e19
+Author: Jonas Tochtermann <jontoc@az.zli.ch>
+Date:   Wed Feb 24 16:35:50 2021 +0100
+
+    Counter finalized, with tests
+
+commit cab248757d2dddfc5938ea655dad0eafde3fc9cf
+Author: Jonas Tochtermann <jontoc@az.zli.ch>
+Date:   Wed Feb 24 16:03:17 2021 +0100
+
+    added Project counter (works, no tests yet)
+
+commit b49201061a1cf957abb95691a3ad61dd670d8722
+Author: Jonas Tochtermann <jontoc@az.zli.ch>
+Date:   Wed Feb 24 10:00:21 2021 +0100
+
+    init commit

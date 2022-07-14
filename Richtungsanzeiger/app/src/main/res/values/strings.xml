@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Richtungsanzeiger</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="main_fragment_label">Meine Orte</string>
+    <string name="show_direction_fragment_label">Richtung anzeigen</string>
+    <string name="edit_location_fragment_label">Ort bearbeiten</string>
+    <string name="search_on_map_fragment_label">Ort auswählen</string>
+    <string name="next">Next</string>
+    <string name="edit_position">Ort speichern</string>
+
+    <string name="hello_first_fragment">Matterhorn</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="compass">Richtung anzeigen</string>
+    <string name="editLocation">Bearbeiten</string>
+    <string name="locationName">Name des Ortes</string>
+    <string name="latitude">Breitengrad</string>
+    <string name="longitude">Längengrad</string>
+    <string name="compasstext">Windrose</string>
+    <string name="arrowtext">Richtung</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
